@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +8,7 @@ import { SearchComponent } from './components/search/search.component';
 import { InformationComponent } from './components/information/information.component';
 import { FormEditComponent } from './components/form-edit/form-edit.component';
 import { FormCreateComponent } from './components/form-create/form-create.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +16,11 @@ import { FormCreateComponent } from './components/form-create/form-create.compon
     SearchComponent,
     InformationComponent,
     FormEditComponent,
-    FormCreateComponent
+    FormCreateComponent,
+    HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
