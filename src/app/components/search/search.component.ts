@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { MutantService } from '../../services/mutant.service';
 
 @Component({
   selector: 'app-search',
@@ -7,12 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
   dataSearch = '';
+  @Output() newItemEvent = new EventEmitter<string>();
 
-  constructor() {}
+  constructor(private MutantService: MutantService) {}
 
   ngOnInit(): void {}
 
   search(): void {
-    console.log(this.dataSearch);
+    this.MutantService.searchMutant(this.dataSearch).subscribe(
+      (res) => {
+        this.newItemEvent.emit(res.data);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 }
