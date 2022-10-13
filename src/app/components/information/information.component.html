@@ -1,1 +1,24 @@
-<p>information works!</p>
+<table class="table content">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">nombre</th>
+      <th scope="col">heroe o villano</th>
+      <th scope="col">ciudad</th>
+      <th scope="col">libertad</th>
+      <th scope="col">detenido oh desconocido</th>
+      <th scope="col">tipo de super poder</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let lista of item">
+    <tr>
+      <th scope="row">{{ lista.id }}</th>
+      <td>{{ lista.name }}</td>
+      <td>{{ lista.heroes_or_villains }}</td>
+      <td>{{ lista.city }}</td>
+      <td>{{ lista.liberty }}</td>
+      <td>{{ lista.stopped_or_unknown }}</td>
+      <td>{{ lista.type_of_super_power }}</td>
+    </tr>
+  </tbody>
+</table>

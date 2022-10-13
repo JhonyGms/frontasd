@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   addItem(newItem: any) {
-    console.log(newItem);
     this.Item = newItem;
   }
 }

@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
     this.MutantService.searchMutant(this.dataSearch).subscribe(
       (res) => {
         this.newItemEvent.emit(res.data);
+        console.log(res.data);
       },
       (err) => {
         console.log(err);
